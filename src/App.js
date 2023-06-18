@@ -1,11 +1,15 @@
+import { Component } from 'react';
 import './App.css';
+import GeneralData from './components/GeneralForm';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>hello world!</h1>
-    </div>
-  );
+class App extends Component{
+  render() {
+    return(
+      <div>
+        <GeneralData />
+      </div>
+    )
+  }
 }
 
 export default App;
