@@ -6,10 +6,51 @@ import GeneralData from "./components/GeneralForm";
 import SkillsForm from "./components/SkillsForm";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // cv: {
+      fullName: "",
+      email: "",
+      phone: "",
+      number: "",
+      summary: "",
+      skills: [],
+      education: [
+        {
+          schoolName: "",
+          studyTitle: "",
+          studyDate: "",
+        },
+      ],
+      experience: [
+        {
+          companyName: "",
+          positionTitle: "",
+          jobTasks: [],
+          startingDate: "",
+          endingDate: "",
+        },
+      ],
+      // }
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange (e) {
+    console.log(e.target)
+    this.setState({ [e.target.id]: e.target.value });
+  };
   render() {
     return (
       <form>
-        <GeneralData />
+        <GeneralData
+          fullName={this.state.fullName}
+          email={this.state.email}
+          phone={this.state.phone}
+          number={this.state.number}
+          summary={this.state.summary}
+          onChange={this.handleChange}
+        />
         <SkillsForm />
         <EducationForm />
         <Experience />
