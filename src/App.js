@@ -1,15 +1,18 @@
-import { Component } from 'react';
-import './App.css';
-import GeneralData from './components/GeneralForm';
+import { Component } from "react";
+import "./App.css";
+import EducationForm from "./components/EducationForm";
+import GeneralData from "./components/GeneralForm";
 
-class App extends Component{
+class App extends Component {
   render() {
-    return(
+    return (
       <div>
         <GeneralData />
+        <EducationForm />
       </div>
-    )
+    );
   }
 }
 
 export default App;
+
