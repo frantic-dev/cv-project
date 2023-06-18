@@ -7,6 +7,7 @@ class Experience extends Component {
   render() {
     return (
       <section>
+        <h3>experience</h3>
         <label htmlFor="company-name">Enter the company name:</label>
         <input type="text" name="company-name" id="company-name" />
         <label htmlFor="position-title">Enter the position title:</label>
@@ -15,8 +16,8 @@ class Experience extends Component {
         <input type="text" name="job-tasks" id="job-tasks" />
         <label htmlFor="starting-date">Enter the date you started:</label>
         <input type="date" name="starting-date" id="starting-date" />
-        <label htmlFor="starting-date">Enter the date you started:</label>
-        <input type="date" name="starting-date" id="starting-date" />
+        <label htmlFor="ending-date">Enter the date you ended:</label>
+        <input type="date" name="ending-date" id="ending-date" />
       </section>
     );
   }

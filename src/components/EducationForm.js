@@ -7,6 +7,7 @@ class EducationForm extends Component {
   render() {
     return (
       <section>
+        <h3>education</h3>
         <label htmlFor="school-name">Enter school name:</label>
         <input type="text" id="school-name" />
         <label htmlFor="study-title">Enter study title:</label>

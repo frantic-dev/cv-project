@@ -7,8 +7,9 @@ class SkillsForm extends Component {
   render() {
     return (
       <section>
+        <h3>skills</h3>
         <label htmlFor="skills">Enter your skills:</label>
-        <textarea name="skills" id="skills" cols="30" rows="2"></textarea>
+        <textarea name="skills" id="skills" rows="1"></textarea>
       </section>
     );
   }

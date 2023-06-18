@@ -8,12 +8,12 @@ import SkillsForm from "./components/SkillsForm";
 class App extends Component {
   render() {
     return (
-      <div>
+      <form>
         <GeneralData />
         <SkillsForm />
         <EducationForm />
         <Experience />
-      </div>
+      </form>
     );
   }
 }
