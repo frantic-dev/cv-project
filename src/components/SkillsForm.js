@@ -1,6 +1,7 @@
 import { Component } from "react";
 import SubmitBtn from "./SubmitBtn";
 class SkillsForm extends Component {
+  // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props)
     // console.log(props)

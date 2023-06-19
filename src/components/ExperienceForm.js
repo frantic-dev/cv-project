@@ -9,7 +9,7 @@ class Experience extends Component {
     return (
       <section>
         <div className="section-header">
-          <h3>education</h3>
+          <h3>experience</h3>
           <img src={plusIcon} alt="a plus icon" className="plus-icon" />
         </div>{" "}
         <label htmlFor="company-name">Enter the company name:</label>
