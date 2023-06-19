@@ -18,7 +18,6 @@ class App extends Component {
       skills: "",
       skillsForm: [],
       education: [
-        "",
         {
           schoolName: "",
           studyTitle: "",
@@ -42,6 +41,27 @@ class App extends Component {
       // }
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick(e) {
+    let propName = e.target.previousElementSibling.textContent;
+    let inputIds = Object.keys(this.state[propName][0]);
+    console.log(propName);
+    this.setState((prev) => ({
+      [propName]: [
+        ...prev[propName],
+        {
+          schoolName: "",
+          studyTitle: "",
+          studyDate: "",
+        },
+      ],
+    }));
+    console.log(Object.keys(this.state[propName][0]));
+    inputIds.forEach((id) => {
+      let input = document.getElementById(id);
+      input.value = "";
+    });
   }
   handleChange(e) {
     let key = e.target.id;
@@ -82,6 +102,7 @@ class App extends Component {
         <EducationForm
           education={this.state.education}
           onChange={this.handleChange}
+          handleClick={this.handleClick}
         />
         <Experience />
       </form>

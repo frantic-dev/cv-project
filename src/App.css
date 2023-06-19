@@ -11,7 +11,8 @@ label {
   display: inline-block;
   width: 25vw;
 }
-input, textarea {
+input,
+textarea {
   display: inline-block;
   width: 15.5vw;
   margin-bottom: 20px;
@@ -27,10 +28,10 @@ section > h3 {
   width: 100%;
   text-transform: uppercase;
 }
-.submit-btn img{
+.submit-btn img {
   height: 1rem;
 }
-.submit-btn{
+.submit-btn {
   height: min-content;
   padding: 2px;
   margin-left: 5px;

@@ -1,6 +1,6 @@
 import { Component } from "react";
 import SubmitBtn from "./SubmitBtn";
-import plusIcon from "../icons/plusIcon.svg"
+import plusIcon from "../icons/plusIcon.svg";
 class Experience extends Component {
   // constructor(props){
   //   super(props)
