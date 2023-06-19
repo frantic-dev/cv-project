@@ -15,7 +15,8 @@ class App extends Component {
       phone: "",
       number: "",
       summary: "",
-      skills: [],
+      skills: "",
+      skillsForm: [],
       education: [
         {
           schoolName: "",
@@ -36,10 +37,16 @@ class App extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
   }
-  handleChange (e) {
-    console.log(e.target)
-    this.setState({ [e.target.id]: e.target.value });
-  };
+  handleChange(e) {
+    let key = e.target.id;
+    this.setState({ [key]: e.target.value });
+    if (key === "skills") {
+      this.setState((state) => {
+        console.log(state);
+        return { skillsForm: state.skills.split(",") };
+      });
+    }
+  }
   render() {
     return (
       <form>
@@ -51,7 +58,7 @@ class App extends Component {
           summary={this.state.summary}
           onChange={this.handleChange}
         />
-        <SkillsForm />
+        <SkillsForm skills={this.state.skills} onChange={this.handleChange} />
         <EducationForm />
         <Experience />
       </form>
