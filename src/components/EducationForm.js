@@ -2,9 +2,10 @@ import { Component } from "react";
 import SubmitBtn from "./SubmitBtn";
 import plusIcon from "./../icons/plusIcon.svg";
 class EducationForm extends Component {
+  // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
-    console.log(props);
+    // console.log(props);
   }
   render() {
     return (
@@ -38,7 +39,7 @@ class EducationForm extends Component {
 
         <label htmlFor="studyDate">Enter study date:</label>
         <input
-          type="text"
+          type="date"
           id="studyDate"
           value={this.props.education.studyDate}
           onChange={this.props.onChange}

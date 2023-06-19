@@ -16,13 +16,7 @@ class App extends Component {
       number: "",
       summary: "",
       skills: "",
-      skillsForm: [],
       education: [
-        {
-          schoolName: "",
-          studyTitle: "",
-          studyDate: "",
-        },
         {
           schoolName: "",
           studyTitle: "",
@@ -33,7 +27,7 @@ class App extends Component {
         {
           companyName: "",
           positionTitle: "",
-          jobTasks: [],
+          jobTasks: "",
           startingDate: "",
           endingDate: "",
         },
@@ -46,7 +40,6 @@ class App extends Component {
   handleClick(e) {
     let propName = e.target.previousElementSibling.textContent;
     let inputIds = Object.keys(this.state[propName][0]);
-    console.log(propName);
     this.setState((prev) => ({
       [propName]: [
         ...prev[propName],
@@ -57,7 +50,6 @@ class App extends Component {
         },
       ],
     }));
-    console.log(Object.keys(this.state[propName][0]));
     inputIds.forEach((id) => {
       let input = document.getElementById(id);
       input.value = "";
@@ -66,26 +58,15 @@ class App extends Component {
   handleChange(e) {
     let key = e.target.id;
     let stateArray = e.target.parentElement.className;
-    console.log(e.target.parentElement.className);
-    let currentEducation =
-      this.state.education[this.state.education.length - 1];
-    if (stateArray === "education") {
-      // console.log(currentEducation)
-      // console.log(this.state)
+    if (stateArray === "education" || stateArray === "experience") {
+      let currentProp =
+        this.state[stateArray][this.state[stateArray].length - 1];
       this.setState((prevState) => ({
         [stateArray]: prevState[stateArray].map((school) =>
-          school === currentEducation
-            ? { ...school, [key]: e.target.value }
-            : school
+          school === currentProp ? { ...school, [key]: e.target.value } : school
         ),
       }));
     } else this.setState({ [key]: e.target.value });
-    if (key === "skills") {
-      this.setState((state) => {
-        console.log(state);
-        return { skillsForm: state.skills.split(",") };
-      });
-    }
   }
   render() {
     return (
@@ -104,7 +85,11 @@ class App extends Component {
           onChange={this.handleChange}
           handleClick={this.handleClick}
         />
-        <Experience />
+        <Experience
+          experience={this.state.experience}
+          onChange={this.handleChange}
+          handleClick={this.handleClick}
+        />
       </form>
     );
   }

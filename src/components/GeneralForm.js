@@ -20,7 +20,7 @@ class GeneralData extends Component {
         <SubmitBtn />
         <label htmlFor="email">Enter email:</label>
         <input
-          type="text"
+          type="email"
           id="email"
           value={this.props.email}
           onChange={(e) => this.props.onChange(e)}
