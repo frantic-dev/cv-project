@@ -17,9 +17,14 @@ input, textarea {
   margin-bottom: 20px;
   padding: 4px;
 }
-h3 {
+.section-header {
   width: 100%;
   text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+}
+section > h3 {
+  width: 100%;
 }
 .submit-btn img{
   height: 1rem;
@@ -28,4 +33,10 @@ h3 {
   height: min-content;
   padding: 2px;
   margin-left: 5px;
+}
+.plus-icon {
+  height: 2rem;
+  position: relative;
+  top: 15px;
+  cursor: pointer;
 }

@@ -39,7 +39,9 @@ class App extends Component {
   }
   handleChange(e) {
     let key = e.target.id;
-    this.setState({ [key]: e.target.value });
+    if(key === "education") {
+
+    } else this.setState({ [key]: e.target.value });
     if (key === "skills") {
       this.setState((state) => {
         console.log(state);
