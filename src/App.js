@@ -18,6 +18,12 @@ class App extends Component {
       skills: "",
       skillsForm: [],
       education: [
+        "",
+        {
+          schoolName: "",
+          studyTitle: "",
+          studyDate: "",
+        },
         {
           schoolName: "",
           studyTitle: "",
@@ -39,8 +45,20 @@ class App extends Component {
   }
   handleChange(e) {
     let key = e.target.id;
-    if(key === "education") {
-
+    let stateArray = e.target.parentElement.className;
+    console.log(e.target.parentElement.className);
+    let currentEducation =
+      this.state.education[this.state.education.length - 1];
+    if (stateArray === "education") {
+      // console.log(currentEducation)
+      // console.log(this.state)
+      this.setState((prevState) => ({
+        [stateArray]: prevState[stateArray].map((school) =>
+          school === currentEducation
+            ? { ...school, [key]: e.target.value }
+            : school
+        ),
+      }));
     } else this.setState({ [key]: e.target.value });
     if (key === "skills") {
       this.setState((state) => {
@@ -61,7 +79,10 @@ class App extends Component {
           onChange={this.handleChange}
         />
         <SkillsForm skills={this.state.skills} onChange={this.handleChange} />
-        <EducationForm />
+        <EducationForm
+          education={this.state.education}
+          onChange={this.handleChange}
+        />
         <Experience />
       </form>
     );

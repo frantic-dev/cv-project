@@ -2,26 +2,27 @@ import { Component } from "react";
 import SubmitBtn from "./SubmitBtn";
 import plusIcon from "./../icons/plusIcon.svg";
 class EducationForm extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+    console.log(props)
+  }
   render() {
     return (
-      <section>
+      <section className="education">
         <div className="section-header" >
           <h3>education</h3> 
           <img src={plusIcon} alt="a plus icon" className="plus-icon" />
         </div>
-        <label htmlFor="school-name">Enter school name:</label>
-        <input type="text" id="school-name" />
+        <label htmlFor="schoolName">Enter school name:</label>
+        <input type="text" id="schoolName" value={this.props.education.schoolName} onChange={this.props.onChange} />
         <SubmitBtn />
 
-        <label htmlFor="study-title">Enter study title:</label>
-        <input type="text" id="study-title" />
+        <label htmlFor="studyTitle">Enter study title:</label>
+        <input type="text" id="studyTitle" value={this.props.education.studyTitle} onChange={this.props.onChange} />
         <SubmitBtn />
 
-        <label htmlFor="study-date">Enter study date:</label>
-        <input type="text" id="study-date" />
+        <label htmlFor="studyDate">Enter study date:</label>
+        <input type="text" id="studyDate" value={this.props.education.studyDate} onChange={this.props.onChange} />
         <SubmitBtn />
       </section>
     );
