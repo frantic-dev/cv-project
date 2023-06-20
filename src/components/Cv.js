@@ -1,6 +1,7 @@
 import { Component } from "react";
 import "../styles/Cv-ready.css";
 import CvEducation from "./CvEducation";
+import CvExperience from "./CvExperience";
 import CvGeneral from "./CvGeneral";
 import CvSkills from "./CvSkills";
 
@@ -11,6 +12,7 @@ export default class Cv extends Component {
     this.makeList = this.makeList.bind(this);
   }
   makeList(preList) {
+    if(!!preList){
     let listArray = preList.split(",");
     return listArray.map((task, index) => {
       let trimmedTask = task.trimStart();
@@ -21,7 +23,7 @@ export default class Cv extends Component {
           </li>
         );
       else return "";
-    });
+    });}
   }
   render() {
     return (
@@ -37,6 +39,7 @@ export default class Cv extends Component {
           makeList={this.makeList}
         />
         <CvEducation schools={this.props.information.education} />
+        <CvExperience companies={this.props.information.experience} makeList={this.makeList} />
       </div>
     );
   }

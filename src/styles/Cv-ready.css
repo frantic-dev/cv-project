@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap");
 .cv {
   width: 40vw;
-  border: 3px solid yellow;
+  border: 1px solid rgb(201 201 201);
   padding: 20px 40px;
+  height: fit-content;
+  min-height: 90vh;
+  box-shadow: 0 0 25px rgb(134, 133, 133);
 }
 .general-info {
   display: flex;
@@ -25,7 +28,7 @@ h3 {
   background-color: rgb(228 227 227);
   text-transform: uppercase;
 }
-.skills{
+.skills {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
@@ -34,5 +37,16 @@ h3 {
   display: flex;
   justify-content: space-between;
   text-transform: capitalize;
+  margin: 20px;
+}
+.job-title-date {
+  display: flex;
+  justify-content: space-between;
+}
+.job-tasks {
+  margin: 0;
+  padding: 0 15px;
+}
+.cv-company-container {
   margin: 20px;
 }

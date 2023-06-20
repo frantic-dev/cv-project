@@ -18,7 +18,7 @@ class SkillsForm extends Component {
           value={this.props.skills}
           onChange={this.props.onChange}
         ></textarea>
-        <SubmitBtn />
+        {/* <SubmitBtn /> */}
       </section>
     );
   }

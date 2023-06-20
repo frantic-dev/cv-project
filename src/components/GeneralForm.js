@@ -17,7 +17,7 @@ class GeneralData extends Component {
           value={this.props.fullName}
           onChange={(e) => this.props.onChange(e)}
         />
-        <SubmitBtn />
+        {/* <SubmitBtn /> */}
         <label htmlFor="email">Enter email:</label>
         <input
           type="email"
@@ -25,7 +25,7 @@ class GeneralData extends Component {
           value={this.props.email}
           onChange={(e) => this.props.onChange(e)}
         />
-        <SubmitBtn />
+        {/* <SubmitBtn /> */}
         <label htmlFor="number">Enter phone number:</label>
         <input
           type="number"
@@ -33,7 +33,7 @@ class GeneralData extends Component {
           value={this.props.number}
           onChange={(e) => this.props.onChange(e)}
         />
-        <SubmitBtn />
+        {/* <SubmitBtn /> */}
         <h3>professional summary</h3>
         <label htmlFor="summary">Enter professional summary:</label>
         <textarea
@@ -42,7 +42,7 @@ class GeneralData extends Component {
           value={this.props.summary}
           onChange={(e) => this.props.onChange(e)}
         />
-        <SubmitBtn />
+        {/* <SubmitBtn /> */}
       </section>
     );
   }

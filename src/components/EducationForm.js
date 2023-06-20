@@ -34,7 +34,7 @@ class EducationForm extends Component {
           value={this.props.education[currentEducation].schoolName}
           onChange={this.props.onChange}
         />
-        <SubmitBtn />
+        {/* <SubmitBtn /> */}
 
         <label htmlFor="studyTitle">Enter study title:</label>
         <input
@@ -43,7 +43,7 @@ class EducationForm extends Component {
           value={this.props.education[currentEducation].studyTitle}
           onChange={this.props.onChange}
         />
-        <SubmitBtn />
+        {/* <SubmitBtn /> */}
 
         <label htmlFor="studyDate">Enter study date:</label>
         <input
@@ -52,7 +52,7 @@ class EducationForm extends Component {
           value={this.props.education[currentEducation].studyDate}
           onChange={this.props.onChange}
         />
-        <SubmitBtn />
+        {/* <SubmitBtn /> */}
         <ul>{schools}</ul>
       </section>
     );

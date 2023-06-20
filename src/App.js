@@ -26,11 +26,12 @@ class App extends Component {
       ],
       experience: [
         {
-          companyName: "",
-          positionTitle: "",
-          jobTasks: "",
-          startingDate: "",
-          endingDate: "",
+          companyName: "Alaska Airlines | Seattle, WA",
+          positionTitle: "Lead Customer Service Agent",
+          jobTasks:
+            "Met face-to-face with customers to handle issues escalated by associates,  Followed up with customers to share findings and offer solutions for ongoing inquiries, Avoided revenue losses with diligent attention to customers' needs and complaints",
+          startingDate: "2019-05",
+          endingDate: "2023-06",
         },
       ],
       // }
@@ -72,6 +73,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <h1 className="title">Cv project</h1>
         <form>
           <GeneralData
             fullName={this.state.fullName}
