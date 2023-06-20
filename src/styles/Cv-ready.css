@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap");
+.cv {
+  width: 40vw;
+  border: 3px solid yellow;
+  padding: 20px 40px;
+}
+.general-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h1 {
+  font-family: "Raleway", sans-serif;
+  word-break: break-word;
+  /* border: 3px  solid yellow; */
+  width: 10vw;
+  font-size: 1.8vw;
+  text-transform: uppercase;
+}
+h1,
+h3 {
+  color: rgb(83 128 181);
+}
+.cv-section-name {
+  background-color: rgb(228 227 227);
+  text-transform: uppercase;
+}

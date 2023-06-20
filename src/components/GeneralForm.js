@@ -38,7 +38,7 @@ class GeneralData extends Component {
         <label htmlFor="summary">Enter professional summary:</label>
         <textarea
           id="summary"
-          rows="1"
+          rows="10"
           value={this.props.summary}
           onChange={(e) => this.props.onChange(e)}
         />

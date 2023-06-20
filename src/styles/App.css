@@ -4,17 +4,18 @@ section {
 }
 form {
   border: 3px solid palevioletred;
-  width: 49vw;
-  padding: 20px;
+  width: 40vw;
+  padding: 20px 40px;
 }
 label {
   display: inline-block;
-  width: 25vw;
+  width: 15vw;
+  margin: 5px;
 }
 input,
 textarea {
   display: inline-block;
-  width: 15.5vw;
+  width: 21vw;
   margin-bottom: 20px;
   padding: 4px;
 }
@@ -41,4 +42,8 @@ section > h3 {
   position: relative;
   top: 15px;
   cursor: pointer;
+}
+#root > div {
+  display: flex;
+  justify-content: space-around;
 }

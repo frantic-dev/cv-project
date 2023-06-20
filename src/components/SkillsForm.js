@@ -14,7 +14,7 @@ class SkillsForm extends Component {
         <textarea
           name="skills"
           id="skills"
-          rows="1"
+          rows="6"
           value={this.props.skills}
           onChange={this.props.onChange}
         ></textarea>

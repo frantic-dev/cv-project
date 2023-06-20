@@ -1,20 +1,19 @@
 import { Component } from "react";
-import "./App.css";
+import "./styles/App.css";
 import EducationForm from "./components/EducationForm";
 import Experience from "./components/ExperienceForm";
 import GeneralData from "./components/GeneralForm";
 import SkillsForm from "./components/SkillsForm";
-
+import Cv from "./components/Cv";
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       // cv: {
-      fullName: "",
-      email: "",
-      phone: "",
-      number: "",
-      summary: "",
+      fullName: "Stella Walker",
+      email: "example@example.com",
+      number: "5555555555",
+      summary: "Dedicated professional with demonstrated skills in customer service, time management and trend tracking. Experience working in challenging environments to provide customer-focused resolutions and feedback. Willing to take on any task to support team and help the business succeed.",
       skills: "",
       education: [
         {
@@ -70,27 +69,29 @@ class App extends Component {
   }
   render() {
     return (
-      <form>
-        <GeneralData
-          fullName={this.state.fullName}
-          email={this.state.email}
-          phone={this.state.phone}
-          number={this.state.number}
-          summary={this.state.summary}
-          onChange={this.handleChange}
-        />
-        <SkillsForm skills={this.state.skills} onChange={this.handleChange} />
-        <EducationForm
-          education={this.state.education}
-          onChange={this.handleChange}
-          handleClick={this.handleClick}
-        />
-        <Experience
-          experience={this.state.experience}
-          onChange={this.handleChange}
-          handleClick={this.handleClick}
-        />
-      </form>
+      <div>
+        <form>
+          <GeneralData
+            fullName={this.state.fullName}
+            email={this.state.email}
+            number={this.state.number}
+            summary={this.state.summary}
+            onChange={this.handleChange}
+          />
+          <SkillsForm skills={this.state.skills} onChange={this.handleChange} />
+          <EducationForm
+            education={this.state.education}
+            onChange={this.handleChange}
+            handleClick={this.handleClick}
+          />
+          <Experience
+            experience={this.state.experience}
+            onChange={this.handleChange}
+            handleClick={this.handleClick}
+          />
+        </form>
+        <Cv information={this.state} />
+      </div>
     );
   }
 }

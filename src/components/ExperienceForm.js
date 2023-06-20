@@ -2,9 +2,9 @@ import { Component } from "react";
 import SubmitBtn from "./SubmitBtn";
 import plusIcon from "../icons/plusIcon.svg";
 class Experience extends Component {
+  // eslint-disable-next-line no-useless-constructor
   constructor(props){
     super(props)
-    console.log(props)
   }
   render() {
     return (
@@ -20,7 +20,7 @@ class Experience extends Component {
         <input type="text" name="positionTitle" id="positionTitle" value={this.props.experience.positionTitle} onChange={this.props.onChange} />
         <SubmitBtn />
         <label htmlFor="jobTasks">Enter main tasks of the job:</label>
-        <input type="text" name="jobTasks" id="jobTasks" value={this.props.experience.jobTasks} onChange={this.props.onChange}/>
+        <textarea type="text" rows={5} name="jobTasks" id="jobTasks" value={this.props.experience.jobTasks} onChange={this.props.onChange}/>
         <SubmitBtn />
         <label htmlFor="startingDate">Enter the date you started:</label>
         <input type="date" name="startingDate" id="startingDate" value={this.props.experience.startingDate} onChange={this.props.onChange} />
