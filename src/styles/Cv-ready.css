@@ -25,3 +25,8 @@ h3 {
   background-color: rgb(228 227 227);
   text-transform: uppercase;
 }
+.skills{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
