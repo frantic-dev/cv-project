@@ -30,3 +30,9 @@ h3 {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
+.school-container {
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  margin: 20px;
+}

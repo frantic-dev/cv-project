@@ -1,9 +1,10 @@
 import { Component } from "react";
 
 export default class CvGeneral extends Component {
+  // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
-    console.log(props);
+    // console.log(props);
   }
   render() {
     let number =

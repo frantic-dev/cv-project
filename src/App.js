@@ -13,13 +13,15 @@ class App extends Component {
       fullName: "Stella Walker",
       email: "example@example.com",
       number: "5555555555",
-      summary: "Dedicated professional with demonstrated skills in customer service, time management and trend tracking. Experience working in challenging environments to provide customer-focused resolutions and feedback. Willing to take on any task to support team and help the business succeed.",
-      skills: "Positive and professional,Conflict resolution,Request management, reliability, client advocacy, critical thinking, issue troubleshooting",
+      summary:
+        "Dedicated professional with demonstrated skills in customer service, time management and trend tracking. Experience working in challenging environments to provide customer-focused resolutions and feedback. Willing to take on any task to support team and help the business succeed.",
+      skills:
+        "Positive and professional,Conflict resolution,Request management, reliability, client advocacy, critical thinking, issue troubleshooting",
       education: [
         {
-          schoolName: "",
-          studyTitle: "",
-          studyDate: "",
+          schoolName: "University of Washington, Seattle, WA",
+          studyTitle: "Bachelor of Arts - Communication",
+          studyDate: "2017-05",
         },
       ],
       experience: [
