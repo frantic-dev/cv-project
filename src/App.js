@@ -59,7 +59,6 @@ class App extends Component {
     let newProps = {};
     let updatedIndex =
       "current" + propName.charAt(0).toUpperCase() + propName.slice(1);
-    console.log(updatedIndex);
     inputIds.forEach((prop) => (newProps = { ...newProps, [prop]: "" }));
     console.log(newProps);
     this.setState((prev) => ({
@@ -73,34 +72,38 @@ class App extends Component {
   }
   handleDelete(e) {
     e.preventDefault();
-    let deleteBtns = document.getElementsByClassName("education-delete-btn");
+    let sectionName = e.target.className.split("-")[0];
+    let currentIndex = "current" + sectionName.charAt(0).toUpperCase() + sectionName.slice(1)
+    let deleteBtns = document.getElementsByClassName(e.target.className);
     let index = [...deleteBtns].indexOf(e.target);
+    let inputIds = Object.keys(this.state[sectionName][0]);
+    let resetProps = {}
+    inputIds.forEach((prop) => (resetProps = { ...resetProps, [prop]: "" }));
+
     this.setState((prevState) => {
-      if (prevState.education.length === 1)
+      if (prevState[sectionName].length === 1)
         return {
-          education: [
-            {
-              schoolName: "",
-              studyTitle: "",
-              studyDate: "",
-            },
+        [sectionName]: [
+            resetProps,
           ],
         };
       else
         return {
-          education: prevState.education.filter(
-            (school) => prevState.education.indexOf(school) !== index
+        [sectionName]: prevState[sectionName].filter(
+            (school) => prevState[sectionName].indexOf(school) !== index
           ),
-          currentEducation: prevState.education.length - 2,
+          [currentIndex]: prevState[sectionName].length - 2,
         };
     });
   }
   handleEdit(e) {
     e.preventDefault();
-    let editBtns = document.getElementsByClassName("education-edit-btn");
+    let sectionName = e.target.className.split("-")[0];
+    let currentIndex = "current" + sectionName.charAt(0).toUpperCase() + sectionName.slice(1)
+    let editBtns = document.getElementsByClassName(e.target.className);
     let index = [...editBtns].indexOf(e.target);
     this.setState({
-      currentEducation: index,
+      [currentIndex]: index,
     });
   }
   handleChange(e, currentIndex) {
@@ -141,6 +144,8 @@ class App extends Component {
             onChange={this.handleChange}
             handleClick={this.handleClick}
             currentExperience={this.state.currentExperience}
+            handleEdit={this.handleEdit}
+            handleDelete={this.handleDelete}
           />
         </form>
         <Cv information={this.state} />

@@ -1,6 +1,7 @@
 import { Component } from "react";
-import SubmitBtn from "./SubmitBtn";
+// import SubmitBtn from "./SubmitBtn";
 import plusIcon from "../icons/plusIcon.svg";
+import "../styles/Tooltip.css";
 class Experience extends Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
@@ -8,14 +9,31 @@ class Experience extends Component {
     // console.log(props)
   }
   render() {
-    let currentExperience = this.props.currentExperience
+    let currentExperience = this.props.currentExperience;
     let companies = this.props.experience.map((company, index) => {
       return (
         <>
-        <li key={index}>
-          {company.companyName} || {company.positionTitle} || {company.startingDate} || {company.endingDate}
-        </li>
-        <p>{company.jobTasks}</p>
+          <div className="tooltip">
+            <li key={index}>
+              {company.companyName} || {company.positionTitle} ||{" "}
+              {company.startingDate} || {company.endingDate}
+            </li>
+            <span className="tooltiptext">
+              <button
+                className="experience-edit-btn"
+                onClick={(e) => this.props.handleEdit(e)}
+              >
+                edit
+              </button>
+              <button
+                className="experience-delete-btn"
+                onClick={(e) => this.props.handleDelete(e)}
+              >
+                delete
+              </button>
+            </span>
+          </div>
+          <p>{company.jobTasks}</p>
         </>
       );
     });
@@ -76,9 +94,7 @@ class Experience extends Component {
           onChange={(e) => this.props.onChange(e, currentExperience)}
         />
         {/* <SubmitBtn /> */}
-        <ul>
-          {companies}
-        </ul>
+        <ul>{companies}</ul>
       </section>
     );
   }
