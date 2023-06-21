@@ -48,6 +48,7 @@ class App extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
   handleClick(e) {
     let propName = e.target.previousElementSibling.textContent;
@@ -65,6 +66,29 @@ class App extends Component {
     inputIds.forEach((id) => {
       let input = document.getElementById(id);
       input.value = "";
+    });
+  }
+  handleDelete(e) {
+    e.preventDefault();
+    let deleteBtns = document.getElementsByClassName("education-delete-btn");
+    let index = [...deleteBtns].indexOf(e.target);
+    this.setState((prevState) => {
+      if (prevState.education.length === 1)
+        return {
+          education: [
+            {
+              schoolName: "",
+              studyTitle: "",
+              studyDate: "",
+            },
+          ],
+        };
+      else
+        return {
+          education: prevState.education.filter(
+            (school) => prevState.education.indexOf(school) !== index
+          ),
+        };
     });
   }
   handleChange(e) {
@@ -97,6 +121,7 @@ class App extends Component {
             education={this.state.education}
             onChange={this.handleChange}
             handleClick={this.handleClick}
+            handleDelete={this.handleDelete}
           />
           <Experience
             experience={this.state.experience}

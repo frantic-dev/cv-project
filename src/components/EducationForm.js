@@ -22,8 +22,13 @@ class EducationForm extends Component {
               {school.schoolName} || {school.studyTitle} || {school.studyDate}
             </li>
             <span className="tooltiptext">
-              <button className="education-edit-btn" >edit</button>
-              <button className="education-delete-btn" >delete</button>
+              <button className="education-edit-btn">edit</button>
+              <button
+                className="education-delete-btn"
+                onClick={(e) => this.props.handleDelete(e)}
+              >
+                delete
+              </button>
             </span>
           </div>
         </>
