@@ -9,11 +9,11 @@ class EducationForm extends Component {
     // console.log(props);
   }
   render() {
-    let currentEducation = this.props.education.length - 1;
     // function handleClick(e) {
     //   e.preventDefault();
     //   console.log(e.target.parentElement);
     // }
+    let currentEducation = this.props.currentEducation;
     let schools = this.props.education.map((school, index) => {
       return (
         <>
@@ -22,7 +22,12 @@ class EducationForm extends Component {
               {school.schoolName} || {school.studyTitle} || {school.studyDate}
             </li>
             <span className="tooltiptext">
-              <button className="education-edit-btn">edit</button>
+              <button
+                className="education-edit-btn"
+                onClick={(e) => this.props.handleEdit(e)}
+              >
+                edit
+              </button>
               <button
                 className="education-delete-btn"
                 onClick={(e) => this.props.handleDelete(e)}
@@ -50,7 +55,9 @@ class EducationForm extends Component {
           type="text"
           id="schoolName"
           value={this.props.education[currentEducation].schoolName}
-          onChange={this.props.onChange}
+          onChange={(e) =>
+            this.props.onChange(e, currentEducation)
+          }
         />
 
         <label htmlFor="studyTitle">Enter study title:</label>
@@ -58,7 +65,9 @@ class EducationForm extends Component {
           type="text"
           id="studyTitle"
           value={this.props.education[currentEducation].studyTitle}
-          onChange={this.props.onChange}
+          onChange={(e) =>
+            this.props.onChange(e, currentEducation)
+          }
         />
 
         <label htmlFor="studyDate">Enter study date:</label>
@@ -66,7 +75,9 @@ class EducationForm extends Component {
           type="month"
           id="studyDate"
           value={this.props.education[currentEducation].studyDate}
-          onChange={this.props.onChange}
+          onChange={(e) =>
+            this.props.onChange(e, currentEducation)
+          }
         />
 
         <ul>{schools}</ul>

@@ -34,6 +34,7 @@ class App extends Component {
           studyDate: "2017-05",
         },
       ],
+      currentEducation: 2,
       experience: [
         {
           companyName: "Alaska Airlines | Seattle, WA",
@@ -49,6 +50,7 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
   handleClick(e) {
     let propName = e.target.previousElementSibling.textContent;
@@ -62,6 +64,7 @@ class App extends Component {
           studyDate: "",
         },
       ],
+      currentEducation: prev.education.length,
     }));
     inputIds.forEach((id) => {
       let input = document.getElementById(id);
@@ -91,12 +94,19 @@ class App extends Component {
         };
     });
   }
-  handleChange(e) {
+  handleEdit(e) {
+    e.preventDefault();
+    let editBtns = document.getElementsByClassName("education-edit-btn");
+    let index = [...editBtns].indexOf(e.target);
+    this.setState({
+      currentEducation: index,
+    });
+  }
+  handleChange(e, currentIndex) {
     let key = e.target.id;
     let stateArray = e.target.parentElement.className;
     if (stateArray === "education" || stateArray === "experience") {
-      let currentProp =
-        this.state[stateArray][this.state[stateArray].length - 1];
+      let currentProp = this.state[stateArray][currentIndex];
       this.setState((prevState) => ({
         [stateArray]: prevState[stateArray].map((school) =>
           school === currentProp ? { ...school, [key]: e.target.value } : school
@@ -122,6 +132,8 @@ class App extends Component {
             onChange={this.handleChange}
             handleClick={this.handleClick}
             handleDelete={this.handleDelete}
+            handleEdit={this.handleEdit}
+            currentEducation={this.state.currentEducation}
           />
           <Experience
             experience={this.state.experience}
