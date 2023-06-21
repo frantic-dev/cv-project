@@ -91,6 +91,7 @@ class App extends Component {
           education: prevState.education.filter(
             (school) => prevState.education.indexOf(school) !== index
           ),
+          currentEducation: prevState.education.length - 2,
         };
     });
   }
