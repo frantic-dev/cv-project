@@ -8,7 +8,7 @@ class Experience extends Component {
     // console.log(props)
   }
   render() {
-    let currentExperience = this.props.experience.length - 1
+    let currentExperience = this.props.currentExperience
     let companies = this.props.experience.map((company, index) => {
       return (
         <>
@@ -36,7 +36,7 @@ class Experience extends Component {
           name="companyName"
           id="companyName"
           value={this.props.experience[currentExperience].companyName}
-          onChange={this.props.onChange}
+          onChange={(e) => this.props.onChange(e, currentExperience)}
         />
         {/* <SubmitBtn /> */}
         <label htmlFor="positionTitle">Enter the position title:</label>
@@ -45,7 +45,7 @@ class Experience extends Component {
           name="positionTitle"
           id="positionTitle"
           value={this.props.experience[currentExperience].positionTitle}
-          onChange={this.props.onChange}
+          onChange={(e) => this.props.onChange(e, currentExperience)}
         />
         {/* <SubmitBtn /> */}
         <label htmlFor="jobTasks">Enter main tasks of the job:</label>
@@ -55,7 +55,7 @@ class Experience extends Component {
           name="jobTasks"
           id="jobTasks"
           value={this.props.experience[currentExperience].jobTasks}
-          onChange={this.props.onChange}
+          onChange={(e) => this.props.onChange(e, currentExperience)}
         />
         {/* <SubmitBtn /> */}
         <label htmlFor="startingDate">Enter the date you started:</label>
@@ -64,7 +64,7 @@ class Experience extends Component {
           name="startingDate"
           id="startingDate"
           value={this.props.experience[currentExperience].startingDate}
-          onChange={this.props.onChange}
+          onChange={(e) => this.props.onChange(e, currentExperience)}
         />
         {/* <SubmitBtn /> */}
         <label htmlFor="endingDate">Enter the date you ended:</label>
@@ -73,7 +73,7 @@ class Experience extends Component {
           name="endingDate"
           id="endingDate"
           value={this.props.experience[currentExperience].endingDate}
-          onChange={this.props.onChange}
+          onChange={(e) => this.props.onChange(e, currentExperience)}
         />
         {/* <SubmitBtn /> */}
         <ul>

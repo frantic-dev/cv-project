@@ -45,6 +45,7 @@ class App extends Component {
           endingDate: "2023-06",
         },
       ],
+      currentExperience: 0,
       // }
     };
     this.handleChange = this.handleChange.bind(this);
@@ -55,16 +56,15 @@ class App extends Component {
   handleClick(e) {
     let propName = e.target.previousElementSibling.textContent;
     let inputIds = Object.keys(this.state[propName][0]);
+    let newProps = {};
+    let updatedIndex =
+      "current" + propName.charAt(0).toUpperCase() + propName.slice(1);
+    console.log(updatedIndex);
+    inputIds.forEach((prop) => (newProps = { ...newProps, [prop]: "" }));
+    console.log(newProps);
     this.setState((prev) => ({
-      [propName]: [
-        ...prev[propName],
-        {
-          schoolName: "",
-          studyTitle: "",
-          studyDate: "",
-        },
-      ],
-      currentEducation: prev.education.length,
+      [propName]: [...prev[propName], newProps],
+      [updatedIndex]: prev[propName].length,
     }));
     inputIds.forEach((id) => {
       let input = document.getElementById(id);
@@ -140,6 +140,7 @@ class App extends Component {
             experience={this.state.experience}
             onChange={this.handleChange}
             handleClick={this.handleClick}
+            currentExperience={this.state.currentExperience}
           />
         </form>
         <Cv information={this.state} />
