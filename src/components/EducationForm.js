@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Component } from "react";
-import SubmitBtn from "./SubmitBtn";
 import plusIcon from "./../icons/plusIcon.svg";
+import "../styles/Tooltip.css";
 class EducationForm extends Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
@@ -9,11 +10,23 @@ class EducationForm extends Component {
   }
   render() {
     let currentEducation = this.props.education.length - 1;
+    // function handleClick(e) {
+    //   e.preventDefault();
+    //   console.log(e.target.parentElement);
+    // }
     let schools = this.props.education.map((school, index) => {
       return (
-        <li key={index}>
-          {school.schoolName} || {school.studyTitle} || {school.studyDate}
-        </li>
+        <>
+          <div className="tooltip">
+            <li key={index}>
+              {school.schoolName} || {school.studyTitle} || {school.studyDate}
+            </li>
+            <span className="tooltiptext">
+              <button className="education-edit-btn" >edit</button>
+              <button className="education-delete-btn" >delete</button>
+            </span>
+          </div>
+        </>
       );
     });
     return (
@@ -34,7 +47,6 @@ class EducationForm extends Component {
           value={this.props.education[currentEducation].schoolName}
           onChange={this.props.onChange}
         />
-        {/* <SubmitBtn /> */}
 
         <label htmlFor="studyTitle">Enter study title:</label>
         <input
@@ -43,7 +55,6 @@ class EducationForm extends Component {
           value={this.props.education[currentEducation].studyTitle}
           onChange={this.props.onChange}
         />
-        {/* <SubmitBtn /> */}
 
         <label htmlFor="studyDate">Enter study date:</label>
         <input
@@ -52,7 +63,7 @@ class EducationForm extends Component {
           value={this.props.education[currentEducation].studyDate}
           onChange={this.props.onChange}
         />
-        {/* <SubmitBtn /> */}
+
         <ul>{schools}</ul>
       </section>
     );

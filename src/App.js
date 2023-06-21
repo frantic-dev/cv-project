@@ -19,7 +19,17 @@ class App extends Component {
         "Positive and professional,Conflict resolution,Request management, reliability, client advocacy, critical thinking, issue troubleshooting",
       education: [
         {
-          schoolName: "University of Washington, Seattle, WA",
+          schoolName: "University of Washington, Seattle, WA1",
+          studyTitle: "Bachelor of Arts - Communication",
+          studyDate: "2017-05",
+        },
+        {
+          schoolName: "University of Washington, Seattle, WA2",
+          studyTitle: "Bachelor of Arts - Communication",
+          studyDate: "2017-05",
+        },
+        {
+          schoolName: "University of Washington, Seattle, WA3",
           studyTitle: "Bachelor of Arts - Communication",
           studyDate: "2017-05",
         },

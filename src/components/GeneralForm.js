@@ -10,7 +10,7 @@ class GeneralData extends Component {
     return (
       <section>
         <h3>General information</h3>
-        <label htmlFor="name">Enter name:</label>
+        <label htmlFor="fullName">Enter name:</label>
         <input
           type="text"
           id="fullName"

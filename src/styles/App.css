@@ -56,3 +56,13 @@ section > h3 {
   margin: 40px 0;
   gap: 40px 0;
 }
+.tippy-box[data-theme~='dark'] {
+  background-color: rgb(49, 49, 49);
+}
+.edit-school-btn {
+  background-color: transparent;
+  border: none;
+  color: aliceblue;
+  cursor: pointer;
+  padding: 5px;
+}
