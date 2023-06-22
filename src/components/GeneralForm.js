@@ -1,5 +1,4 @@
 import { Component } from "react";
-import SubmitBtn from "./SubmitBtn";
 class GeneralData extends Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
@@ -17,7 +16,6 @@ class GeneralData extends Component {
           value={this.props.fullName}
           onChange={(e) => this.props.onChange(e)}
         />
-        {/* <SubmitBtn /> */}
         <label htmlFor="email">Enter email:</label>
         <input
           type="email"
@@ -25,7 +23,6 @@ class GeneralData extends Component {
           value={this.props.email}
           onChange={(e) => this.props.onChange(e)}
         />
-        {/* <SubmitBtn /> */}
         <label htmlFor="number">Enter phone number:</label>
         <input
           type="number"
@@ -33,7 +30,6 @@ class GeneralData extends Component {
           value={this.props.number}
           onChange={(e) => this.props.onChange(e)}
         />
-        {/* <SubmitBtn /> */}
         <h3>professional summary</h3>
         <label htmlFor="summary">Enter professional summary:</label>
         <textarea
@@ -42,7 +38,6 @@ class GeneralData extends Component {
           value={this.props.summary}
           onChange={(e) => this.props.onChange(e)}
         />
-        {/* <SubmitBtn /> */}
       </section>
     );
   }

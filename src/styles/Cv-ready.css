@@ -27,6 +27,7 @@ h3 {
 .cv-section-name {
   background-color: rgb(228 227 227);
   text-transform: uppercase;
+  padding: 2px;
 }
 .skills {
   display: grid;

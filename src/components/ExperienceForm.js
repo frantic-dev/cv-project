@@ -1,5 +1,4 @@
 import { Component } from "react";
-// import SubmitBtn from "./SubmitBtn";
 import plusIcon from "../icons/plusIcon.svg";
 import "../styles/Tooltip.css";
 class Experience extends Component {
@@ -56,7 +55,6 @@ class Experience extends Component {
           value={this.props.experience[currentExperience].companyName}
           onChange={(e) => this.props.onChange(e, currentExperience)}
         />
-        {/* <SubmitBtn /> */}
         <label htmlFor="positionTitle">Enter the position title:</label>
         <input
           type="text"
@@ -65,7 +63,6 @@ class Experience extends Component {
           value={this.props.experience[currentExperience].positionTitle}
           onChange={(e) => this.props.onChange(e, currentExperience)}
         />
-        {/* <SubmitBtn /> */}
         <label htmlFor="jobTasks">Enter main tasks of the job:</label>
         <textarea
           type="text"
@@ -75,7 +72,6 @@ class Experience extends Component {
           value={this.props.experience[currentExperience].jobTasks}
           onChange={(e) => this.props.onChange(e, currentExperience)}
         />
-        {/* <SubmitBtn /> */}
         <label htmlFor="startingDate">Enter the date you started:</label>
         <input
           type="month"
@@ -84,7 +80,6 @@ class Experience extends Component {
           value={this.props.experience[currentExperience].startingDate}
           onChange={(e) => this.props.onChange(e, currentExperience)}
         />
-        {/* <SubmitBtn /> */}
         <label htmlFor="endingDate">Enter the date you ended:</label>
         <input
           type="month"
@@ -93,7 +88,6 @@ class Experience extends Component {
           value={this.props.experience[currentExperience].endingDate}
           onChange={(e) => this.props.onChange(e, currentExperience)}
         />
-        {/* <SubmitBtn /> */}
         <ul>{companies}</ul>
       </section>
     );

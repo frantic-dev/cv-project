@@ -23,18 +23,8 @@ class App extends Component {
           studyTitle: "Bachelor of Arts - Communication",
           studyDate: "2017-05",
         },
-        {
-          schoolName: "University of Washington, Seattle, WA2",
-          studyTitle: "Bachelor of Arts - Communication",
-          studyDate: "2017-05",
-        },
-        {
-          schoolName: "University of Washington, Seattle, WA3",
-          studyTitle: "Bachelor of Arts - Communication",
-          studyDate: "2017-05",
-        },
       ],
-      currentEducation: 2,
+      currentEducation: 0,
       experience: [
         {
           companyName: "Alaska Airlines | Seattle, WA",
@@ -73,23 +63,22 @@ class App extends Component {
   handleDelete(e) {
     e.preventDefault();
     let sectionName = e.target.className.split("-")[0];
-    let currentIndex = "current" + sectionName.charAt(0).toUpperCase() + sectionName.slice(1)
+    let currentIndex =
+      "current" + sectionName.charAt(0).toUpperCase() + sectionName.slice(1);
     let deleteBtns = document.getElementsByClassName(e.target.className);
     let index = [...deleteBtns].indexOf(e.target);
     let inputIds = Object.keys(this.state[sectionName][0]);
-    let resetProps = {}
+    let resetProps = {};
     inputIds.forEach((prop) => (resetProps = { ...resetProps, [prop]: "" }));
 
     this.setState((prevState) => {
       if (prevState[sectionName].length === 1)
         return {
-        [sectionName]: [
-            resetProps,
-          ],
+          [sectionName]: [resetProps],
         };
       else
         return {
-        [sectionName]: prevState[sectionName].filter(
+          [sectionName]: prevState[sectionName].filter(
             (school) => prevState[sectionName].indexOf(school) !== index
           ),
           [currentIndex]: prevState[sectionName].length - 2,
@@ -99,7 +88,8 @@ class App extends Component {
   handleEdit(e) {
     e.preventDefault();
     let sectionName = e.target.className.split("-")[0];
-    let currentIndex = "current" + sectionName.charAt(0).toUpperCase() + sectionName.slice(1)
+    let currentIndex =
+      "current" + sectionName.charAt(0).toUpperCase() + sectionName.slice(1);
     let editBtns = document.getElementsByClassName(e.target.className);
     let index = [...editBtns].indexOf(e.target);
     this.setState({
