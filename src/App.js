@@ -1,8 +1,8 @@
 import { Component } from "react";
 import "./styles/App.css";
 import EducationForm from "./components/EducationForm";
-import Experience from "./components/ExperienceForm";
-import GeneralData from "./components/GeneralForm";
+import ExperienceForm from "./components/ExperienceForm";
+import GeneralForm from "./components/GeneralForm";
 import SkillsForm from "./components/SkillsForm";
 import Cv from "./components/Cv";
 class App extends Component {
@@ -113,7 +113,7 @@ class App extends Component {
       <div>
         <h1 className="title">Cv project</h1>
         <form>
-          <GeneralData
+          <GeneralForm
             fullName={this.state.fullName}
             email={this.state.email}
             number={this.state.number}
@@ -129,7 +129,7 @@ class App extends Component {
             handleEdit={this.handleEdit}
             currentEducation={this.state.currentEducation}
           />
-          <Experience
+          <ExperienceForm
             experience={this.state.experience}
             onChange={this.handleChange}
             handleClick={this.handleClick}
